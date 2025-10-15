@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --radius: 1.25rem;
+  --background: #020014;
+  --foreground: #eafef1;
+
+  --card: #071128;
+  --card-foreground: #eafef1;
+
+  --popover: #051022;
+  --popover-foreground: #eafef1;
+
+  --primary: #39ff14;
+  --primary-foreground: #031807;
+
+  --secondary: #2d7bff;
+  --secondary-foreground: #f0f4ff;
+
+  --muted: #0e2140;
+  --muted-foreground: #8be5ff;
+
+  --accent: #ff54f7;
+  --accent-foreground: #1a0322;
+
+  --destructive: #ff4975;
+  --border: rgba(57, 255, 20, 0.35);
+  --input: rgba(45, 123, 255, 0.45);
+  --ring: #62ffd4;
+
+  --chart-1: #39ff14;
+  --chart-2: #2d7bff;
+  --chart-3: #ff54f7;
+  --chart-4: #8c5dff;
+  --chart-5: #ffb347;
+
+  --sidebar: rgba(7, 17, 40, 0.88);
+  --sidebar-foreground: #eafef1;
+  --sidebar-primary: #39ff14;
+  --sidebar-primary-foreground: #031807;
+  --sidebar-accent: rgba(45, 123, 255, 0.55);
+  --sidebar-accent-foreground: #f0f4ff;
+  --sidebar-border: rgba(57, 255, 20, 0.28);
+  --sidebar-ring: #62ffd4;
+
+  --glow-primary: rgba(57, 255, 20, 0.28);
+  --glow-secondary: rgba(45, 123, 255, 0.3);
+  --glow-accent: rgba(255, 84, 247, 0.28);
+  --glow-background: rgba(2, 0, 20, 0.96);
+  --shadow-portal: rgba(2, 0, 20, 0.6);
+  --shadow-void: rgba(2, 0, 20, 0.45);
+
+  --font-sci-fi: "Chakra Petch", "Share Tech Mono", "Space Mono", "IBM Plex Mono", monospace;
+}
+
+:root[data-theme="dark"] {
+  --radius: 1.25rem;
+  --background: #01020f;
+  --foreground: #d6ffeb;
+
+  --card: #04122a;
+  --card-foreground: #d6ffeb;
+
+  --popover: #04122a;
+  --popover-foreground: #d6ffeb;
+
+  --primary: #00ff5a;
+  --primary-foreground: #001c06;
+
+  --secondary: #1f66ff;
+  --secondary-foreground: #e3e9ff;
+
+  --muted: #081832;
+  --muted-foreground: #74dfff;
+
+  --accent: #ff6bff;
+  --accent-foreground: #210734;
+
+  --destructive: #ff4f78;
+  --border: rgba(57, 255, 20, 0.4);
+  --input: rgba(31, 102, 255, 0.45);
+  --ring: #62ffd4;
+
+  --chart-1: #00ff5a;
+  --chart-2: #1f66ff;
+  --chart-3: #ff6bff;
+  --chart-4: #8c5dff;
+  --chart-5: #ffb347;
+
+  --sidebar: rgba(4, 18, 42, 0.92);
+  --sidebar-foreground: #d6ffeb;
+  --sidebar-primary: #00ff5a;
+  --sidebar-primary-foreground: #001c06;
+  --sidebar-accent: rgba(31, 102, 255, 0.55);
+  --sidebar-accent-foreground: #e3e9ff;
+  --sidebar-border: rgba(57, 255, 20, 0.32);
+  --sidebar-ring: #62ffd4;
+
+  --glow-primary: rgba(0, 255, 90, 0.32);
+  --glow-secondary: rgba(31, 102, 255, 0.35);
+  --glow-accent: rgba(255, 107, 255, 0.3);
+  --glow-background: rgba(1, 2, 15, 0.95);
+  --shadow-portal: rgba(1, 2, 15, 0.6);
+  --shadow-void: rgba(1, 2, 15, 0.45);
+
+  --font-sci-fi: "Chakra Petch", "Share Tech Mono", "Space Mono", "IBM Plex Mono", monospace;
+}
+
+/* Map CSS variables to Tailwind color tokens and radii */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sci-fi);
+    text-rendering: optimizeLegibility;
+    background-image:
+      radial-gradient(120% 120% at 15% 20%, var(--glow-primary) 0%, transparent 65%),
+      radial-gradient(100% 100% at 85% 10%, var(--glow-accent) 0%, transparent 60%),
+      radial-gradient(160% 160% at 50% 100%, var(--glow-secondary) 0%, transparent 70%),
+      linear-gradient(180deg, var(--glow-background) 0%, var(--background) 100%);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
+/* Utility classes */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

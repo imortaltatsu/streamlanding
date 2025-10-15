@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1760039023933,
+      "tag": "0000_regular_network",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1760490118034,
+      "tag": "0001_light_norrin_radd",
+      "breakpoints": true
+    }
+  ]
+}
