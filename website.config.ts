@@ -37,7 +37,7 @@ export const defaultConfig: AppConfig = {
   },
 
   services: {
-    betterAuthUrl: "http://localhost:5173",
+    betterAuthUrl: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:5173",
     autumnSecretKey: "",
   },
 
@@ -69,7 +69,7 @@ const createConfig = (): AppConfig => {
         betterAuthUrl:
           process.env.VITE_BETTER_AUTH_URL ||
           import.meta.env.VITE_BETTER_AUTH_URL ||
-          "https://stream.yeetlabs.fun",
+          process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://stream.yeetlabs.fun",
         autumnSecretKey:
           process.env.AUTUMN_SECRET_KEY ||
           defaultConfig.services.autumnSecretKey,

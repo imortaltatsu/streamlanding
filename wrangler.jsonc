@@ -19,13 +19,13 @@
     // Autumn Billing - Get your key from https://app.useautumn.com/sandbox/onboarding
     "AUTUMN_SECRET_KEY": "",
   },
-  // D1 binding example (create DB first, then fill in values)
-  "d1_databases": [
-    {
-      "binding": "D1",
-      "database_name": "testing",
-      "database_id": "xyz",
-      "migrations_dir": "./drizzle",
-    },
-  ],
+  // D1 binding - comment out until you create a real database
+  // "d1_databases": [
+  //   {
+  //     "binding": "D1",
+  //     "database_name": "testing",
+  //     "database_id": "your-actual-database-id",
+  //     "migrations_dir": "./drizzle",
+  //   },
+  // ],
 }
